@@ -4,6 +4,9 @@ const companies = [...document.querySelectorAll(".company")].map((item) => ({
   card: item.querySelector(".company-card"),
 }));
 
+const backdrop = document.querySelector(".card-backdrop");
+const wideLayout = window.matchMedia("(min-width: 761px)");
+
 let hovered = null;
 let pinned = null;
 let visible = null;
@@ -20,6 +23,7 @@ function updateCard() {
   if (visible) setExpanded(visible, false);
   visible = next;
   if (visible) setExpanded(visible, true);
+  if (backdrop) backdrop.hidden = !visible;
 }
 
 function closeCards() {
@@ -30,14 +34,14 @@ function closeCards() {
 
 for (const company of companies) {
   company.item.addEventListener("pointerenter", (event) => {
-    if (event.pointerType !== "mouse") return;
+    if (event.pointerType !== "mouse" || !wideLayout.matches) return;
     if (pinned !== company) pinned = null;
     hovered = company;
     updateCard();
   });
 
   company.item.addEventListener("pointerleave", (event) => {
-    if (event.pointerType !== "mouse" || hovered !== company) return;
+    if (event.pointerType !== "mouse" || !wideLayout.matches || hovered !== company) return;
     hovered = null;
     updateCard();
   });
@@ -49,10 +53,22 @@ for (const company of companies) {
   });
 }
 
+for (const button of document.querySelectorAll(".card-close")) {
+  button.addEventListener("click", () => {
+    const company = button.closest(".company");
+    closeCards();
+    company?.querySelector(".company-trigger")?.focus();
+  });
+}
+
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".company")) closeCards();
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeCards();
+  if (event.key !== "Escape") return;
+  const company = visible;
+  const focusWasInCard = company && company.card.contains(document.activeElement);
+  closeCards();
+  if (focusWasInCard) company.trigger.focus();
 });

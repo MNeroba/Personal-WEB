@@ -6,20 +6,65 @@
   <meta name="theme-color" content="#090f17">
   <meta name="description" content="Palīdzu uzņēmumiem samazināt manuālo darbu, savienojot ERP un datu sistēmas un ieviešot mākslīgo intelektu ikdienas procesos.">
   <title>Maksims Neroba | IT un digitālās transformācijas konsultants</title>
+  <meta name="author" content="Maksims Neroba">
+
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif&amp;display=swap">
   <link rel="stylesheet" href="./site.css">
   <script src="./experience.js" defer></script>
+
+  <link rel="canonical" href="./">
   <link rel="alternate" hreflang="lv" href="./">
   <link rel="alternate" hreflang="en" href="./en.html">
   <link rel="alternate" hreflang="ru" href="./ru.html">
+  <link rel="alternate" hreflang="x-default" href="./">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Maksims Neroba">
+  <meta property="og:title" content="Maksims Neroba | IT un digitālās transformācijas konsultants">
+  <meta property="og:description" content="Palīdzu uzņēmumiem samazināt manuālo darbu, savienojot ERP un datu sistēmas un ieviešot mākslīgo intelektu ikdienas procesos.">
+  <meta property="og:image" content="./og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Maksims Neroba — IT un digitālās transformācijas konsultants">
+  <meta property="og:locale" content="lv_LV">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Maksims Neroba | IT un digitālās transformācijas konsultants">
+  <meta name="twitter:description" content="Palīdzu uzņēmumiem samazināt manuālo darbu, savienojot ERP un datu sistēmas un ieviešot mākslīgo intelektu ikdienas procesos.">
+  <meta name="twitter:image" content="./og-image.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Maksims Neroba",
+    "jobTitle": "IT un digitālās transformācijas konsultants",
+    "email": "m.neroba@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rīga",
+      "addressCountry": "LV"
+    },
+    "sameAs": ["https://www.linkedin.com/in/mneroba"],
+    "knowsLanguage": ["lv", "en", "ru"]
+  }
+  </script>
 </head>
 <body>
   <div class="page">
     <header class="masthead">
       <p class="location">Rīga, Latvija</p>
       <nav class="language" aria-label="Valoda">
-        <a href="./" hreflang="lv" lang="lv" aria-label="Latviešu" aria-current="page">LV</a>
-        <a href="./en.html" hreflang="en" lang="en" aria-label="English">EN</a>
-        <a href="./ru.html" hreflang="ru" lang="ru" aria-label="Русский">RU</a>
+        <a href="./" hreflang="lv" lang="lv" aria-label="LV — Latviešu" aria-current="page">LV</a>
+        <a href="./en.html" hreflang="en" lang="en" aria-label="EN — English">EN</a>
+        <a href="./ru.html" hreflang="ru" lang="ru" aria-label="RU — Русский">RU</a>
       </nav>
     </header>
     <main>
@@ -37,19 +82,21 @@
           </address>
         </section>
         <div class="portrait">
-          <img src="./portrait.webp" width="1012" height="1265" alt="Maksima Nerobas portrets" fetchpriority="high">
+          <img src="./portrait.webp" srcset="./portrait-720.webp 720w, ./portrait.webp 1012w" sizes="(max-width: 760px) calc(100vw - 32px), 56vw" width="1012" height="1265" alt="Maksima Nerobas portrets" fetchpriority="high">
         </div>
       </div>
       <section class="experience" aria-labelledby="experience-title">
         <h2 id="experience-title">Profesionālā pieredze</h2>
+        <div class="card-backdrop" aria-hidden="true" hidden></div>
         <ul role="list">
           <li class="company">
             <button class="company-trigger" type="button" aria-expanded="false" aria-controls="antalis-info">
-              <img src="./logos/antalis-white.webp" width="420" height="133" alt="Antalis">
-              <img class="company-color" src="./logos/antalis.webp" width="420" height="133" alt="" aria-hidden="true">
+              <img loading="lazy" decoding="async" src="./logos/antalis-white.webp" width="420" height="133" alt="Antalis">
+              <img loading="lazy" decoding="async" class="company-color" src="./logos/antalis.webp" width="420" height="133" alt="" aria-hidden="true">
             </button>
             <div class="company-card" id="antalis-info" hidden>
               <div class="company-card-content">
+                <button class="card-close" type="button" aria-label="Aizvērt"><span aria-hidden="true">×</span></button>
                 <strong>Antalis</strong>
                 <p>Papīra, iepakojuma un vizuālās komunikācijas materiālu izplatītājs uzņēmumiem.</p>
               </div>
@@ -57,11 +104,12 @@
           </li>
           <li class="company">
             <button class="company-trigger" type="button" aria-expanded="false" aria-controls="kreiss-info">
-              <img src="./logos/kreiss-white.webp" width="234" height="33" alt="Kreiss">
-              <img class="company-color" src="./logos/kreiss.webp" width="234" height="33" alt="" aria-hidden="true">
+              <img loading="lazy" decoding="async" src="./logos/kreiss-white.webp" width="234" height="33" alt="Kreiss">
+              <img loading="lazy" decoding="async" class="company-color" src="./logos/kreiss.webp" width="234" height="33" alt="" aria-hidden="true">
             </button>
             <div class="company-card" id="kreiss-info" hidden>
               <div class="company-card-content">
+                <button class="card-close" type="button" aria-label="Aizvērt"><span aria-hidden="true">×</span></button>
                 <strong>Kreiss</strong>
                 <p>Latvijas loģistikas uzņēmums, kas nodrošina kravu autopārvadājumus un noliktavu pakalpojumus Eiropā.</p>
               </div>
@@ -69,11 +117,12 @@
           </li>
           <li class="company">
             <button class="company-trigger" type="button" aria-expanded="false" aria-controls="severstal-distribution-info">
-              <img src="./logos/severstal-distribution-white.webp" width="420" height="142" alt="Severstal Distribution">
-              <img class="company-color" src="./logos/severstal-distribution.webp" width="420" height="142" alt="" aria-hidden="true">
+              <img loading="lazy" decoding="async" src="./logos/severstal-distribution-white.webp" width="420" height="142" alt="Severstal Distribution">
+              <img loading="lazy" decoding="async" class="company-color" src="./logos/severstal-distribution.webp" width="420" height="142" alt="" aria-hidden="true">
             </button>
             <div class="company-card" id="severstal-distribution-info" hidden>
               <div class="company-card-content">
+                <button class="card-close" type="button" aria-label="Aizvērt"><span aria-hidden="true">×</span></button>
                 <strong>Severstal Distribution</strong>
                 <p>Tērauda apstrādes un izplatīšanas uzņēmums Rīgā. Kopš 2023. gada darbojas ar nosaukumu Marcegaglia Baltics.</p>
               </div>
@@ -81,11 +130,12 @@
           </li>
           <li class="company">
             <button class="company-trigger" type="button" aria-expanded="false" aria-controls="proks-info">
-              <img src="./logos/proks-white.webp" width="420" height="130" alt="Proks">
-              <img class="company-color" src="./logos/proks.webp" width="420" height="130" alt="" aria-hidden="true">
+              <img loading="lazy" decoding="async" src="./logos/proks-white.webp" width="420" height="130" alt="Proks">
+              <img loading="lazy" decoding="async" class="company-color" src="./logos/proks.webp" width="420" height="130" alt="" aria-hidden="true">
             </button>
             <div class="company-card" id="proks-info" hidden>
               <div class="company-card-content">
+                <button class="card-close" type="button" aria-label="Aizvērt"><span aria-hidden="true">×</span></button>
                 <strong>Proks</strong>
                 <p>Plaša patēriņa elektronikas un datoru komponentu vairumtirgotājs Rīgā.</p>
               </div>

@@ -276,15 +276,39 @@ h1, h2, p, ul, address { margin: 0; }
 
 .company-card {
   position: absolute;
-  left: 50%;
+  top: auto;
+  right: auto;
   bottom: 100%;
+  left: 50%;
   width: min(272px, calc(100vw - 36px));
-  padding-bottom: 8px;
+  height: auto;
+  margin: 0;
+  padding: 0 0 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  overflow: visible;
+  max-width: none;
+  max-height: none;
   transform: translateX(-50%);
 }
 
 .company:first-child .company-card { left: 0; transform: none; }
 .company:last-child .company-card { right: 0; left: auto; transform: none; }
+
+@media (min-width: 761px) {
+  .company-card.card-below {
+    top: 100%;
+    bottom: auto;
+    padding: 8px 0 0;
+  }
+}
+
+.company-card::backdrop {
+  background: #02060db3;
+  animation: card-backdrop-enter 180ms ease-out;
+}
 
 .company-card-content {
   position: relative;
@@ -296,7 +320,6 @@ h1, h2, p, ul, address { margin: 0; }
   animation: company-card-enter 180ms ease-out;
 }
 
-.card-backdrop { display: none; }
 .card-close { display: none; }
 
 .company-card strong { color: var(--warm); }
@@ -333,15 +356,6 @@ h1, h2, p, ul, address { margin: 0; }
   .portrait::after { background: linear-gradient(0deg, var(--hero) 0%, #0f1723c9 16%, transparent 55%); }
   .experience { flex-direction: column; align-items: flex-start; gap: 9px; padding-top: 18px; }
 
-  .card-backdrop:not([hidden]) {
-    position: fixed;
-    inset: 0;
-    z-index: 20;
-    display: block;
-    background: #02060db3;
-    animation: card-backdrop-enter 180ms ease-out;
-  }
-
   .company:has(.company-trigger[aria-expanded="true"]) { z-index: 40; }
   .company-trigger[aria-expanded="true"] { opacity: 0; }
   .company-trigger[aria-expanded="true"]:focus-visible { opacity: 1; }
@@ -352,7 +366,9 @@ h1, h2, p, ul, address { margin: 0; }
     position: fixed;
     inset: auto 16px calc(16px + env(safe-area-inset-bottom, 0px));
     width: auto;
+    max-height: calc(100dvh - 32px);
     padding: 0;
+    overflow-y: auto;
     transform: none;
   }
 
@@ -406,5 +422,5 @@ h1, h2, p, ul, address { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .company-trigger, .company-trigger img { transition: none; }
-  .company-card-content, .card-backdrop { animation: none; }
+  .company-card-content, .company-card::backdrop { animation: none; }
 }

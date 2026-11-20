@@ -190,6 +190,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 wideLayout.addEventListener("change", closeCards);
+document.addEventListener("languagechange", closeCards);
 window.addEventListener("resize", () => {
   if (visible && wideLayout.matches) positionCard(visible);
 });

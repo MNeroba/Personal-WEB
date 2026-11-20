@@ -14,14 +14,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif&amp;display=swap">
-  <link rel="stylesheet" href="./site.css">
-  <script src="./experience.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="./site.css?v=10">
+  <script src="./experience.js?v=10" defer></script>
+  <script src="./i18n.js?v=10" defer></script>
 
   <link rel="canonical" href="https://mneroba.github.io/Personal-WEB/">
-  <link rel="alternate" hreflang="lv" href="https://mneroba.github.io/Personal-WEB/">
-  <link rel="alternate" hreflang="en" href="https://mneroba.github.io/Personal-WEB/en.html">
-  <link rel="alternate" hreflang="ru" href="https://mneroba.github.io/Personal-WEB/ru.html">
+  <link rel="alternate" hreflang="lv" href="https://mneroba.github.io/Personal-WEB/?lang=lv">
+  <link rel="alternate" hreflang="en" href="https://mneroba.github.io/Personal-WEB/?lang=en">
+  <link rel="alternate" hreflang="ru" href="https://mneroba.github.io/Personal-WEB/?lang=ru">
   <link rel="alternate" hreflang="x-default" href="https://mneroba.github.io/Personal-WEB/">
 
   <meta property="og:type" content="profile">
@@ -44,7 +45,7 @@
   <meta name="twitter:image" content="https://mneroba.github.io/Personal-WEB/og-image.jpg">
   <meta name="twitter:image:alt" content="Maksims Neroba — IT un digitālās transformācijas konsultants">
 
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="person-schema">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -66,26 +67,32 @@
 <body>
   <div class="page">
     <header class="masthead">
-      <p class="location">Rīga, Latvija</p>
-      <nav class="language" aria-label="Valoda">
-        <a href="./" hreflang="lv" lang="lv" aria-label="LV — Latviešu" aria-current="page">LV</a>
-        <a href="./en.html" hreflang="en" lang="en" aria-label="EN — English">EN</a>
-        <a href="./ru.html" hreflang="ru" lang="ru" aria-label="RU — Русский">RU</a>
+      <p class="location" data-i18n="location">Rīga, Latvija</p>
+      <nav class="language" aria-label="Valoda" data-i18n-aria-label="languageAria">
+        <a href="./?lang=lv" data-lang="lv" hreflang="lv" lang="lv" aria-label="LV — Latviešu" aria-current="page">LV</a>
+        <a href="./?lang=en" data-lang="en" hreflang="en" lang="en" aria-label="EN — English">EN</a>
+        <a href="./?lang=ru" data-lang="ru" hreflang="ru" lang="ru" aria-label="RU — Русский">RU</a>
       </nav>
     </header>
     <main>
       <div class="intro">
         <section class="identity" id="about" aria-labelledby="name">
-          <p class="role">IT un digitālās transformācijas konsultants</p>
-          <h1 id="name"><span>Maksims</span> <span>Neroba</span></h1>
-          <p class="description">Palīdzu uzņēmumiem samazināt manuālo darbu, savienojot ERP un datu sistēmas un ieviešot mākslīgo intelektu ikdienas procesos.</p>
-          <address class="contacts" id="contact" aria-label="Kontakti">
-            <a class="contact-link primary" href="mailto:m.neroba@gmail.com" aria-label="Rakstīt e-pastu Maksimam Nerobam: m.neroba@gmail.com">
-              <span class="envelope" aria-hidden="true"></span>
+          <p class="role" data-i18n="role">IT un digitālās transformācijas konsultants</p>
+          <h1 id="name"><span data-i18n="firstName">Maksims</span> <span data-i18n="lastName">Neroba</span></h1>
+          <p class="description" data-i18n="intro">Palīdzu uzņēmumiem samazināt manuālo darbu, savienojot ERP un datu sistēmas un ieviešot mākslīgo intelektu ikdienas procesos.</p>
+          <address class="contacts" id="contact" aria-label="Kontakti" data-i18n-aria-label="contactsAria">
+            <a class="contact-link primary" href="mailto:m.neroba@gmail.com" aria-label="Rakstīt e-pastu Maksimam Nerobam: m.neroba@gmail.com" data-i18n-aria-label="emailAria">
+              <svg class="gmail-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                <path class="gmail-blue" d="M1.636 20.182h3.819v-9.152L0 6.99v11.556c0 .904.732 1.636 1.636 1.636z"/>
+                <path class="gmail-green" d="M18.545 20.182h3.819c.904 0 1.636-.732 1.636-1.636V6.99l-5.455 4.04v9.152z"/>
+                <path class="gmail-yellow" d="M18.545 5.455v5.576L24 6.991V5.455c0-2.023-2.309-3.178-3.927-1.964l-1.528 1.964z"/>
+                <path class="gmail-red" d="M5.454 11.03V5.455L12 10.364l6.545-4.909v5.575L12 15.939l-6.546-4.909z"/>
+                <path class="gmail-dark-red" d="M0 5.455v1.536l5.455 4.04V5.455L3.927 3.491C2.309 2.277 0 3.432 0 5.455z"/>
+              </svg>
               m.neroba@gmail.com
             </a>
             <a class="contact-link secondary" href="https://www.linkedin.com/in/mneroba" rel="me">
-              <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <svg class="linkedin-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
               </svg>
               LinkedIn
@@ -93,11 +100,11 @@
           </address>
         </section>
         <div class="portrait">
-          <img src="./portrait.webp" srcset="./portrait-720.webp 720w, ./portrait.webp 1012w" sizes="(max-width: 760px) calc(100vw - 32px), 56vw" width="1012" height="1265" alt="Maksima Nerobas portrets" fetchpriority="high">
+          <img src="./portrait.webp" srcset="./portrait-720.webp 720w, ./portrait.webp 1012w" sizes="(max-width: 760px) calc(100vw - 32px), 56vw" width="1012" height="1265" alt="Maksima Nerobas portrets" data-i18n-alt="portraitAlt" fetchpriority="high">
         </div>
       </div>
       <section class="experience" aria-labelledby="experience-title">
-        <h2 id="experience-title">Profesionālā pieredze</h2>
+        <h2 id="experience-title" data-i18n="experienceTitle">Profesionālā pieredze</h2>
         <ul role="list">
           <li class="company">
             <button class="company-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="antalis-info">
@@ -106,9 +113,9 @@
             </button>
             <dialog class="company-card" id="antalis-info" aria-labelledby="antalis-title">
               <div class="company-card-content">
-                <button class="card-close" type="button" aria-label="Aizvērt"><span aria-hidden="true">×</span></button>
+                <button class="card-close" type="button" aria-label="Aizvērt" data-i18n-aria-label="close"><span aria-hidden="true">×</span></button>
                 <strong id="antalis-title">Antalis</strong>
-                <p>Papīra, iepakojuma un vizuālās komunikācijas materiālu izplatītājs uzņēmumiem.</p>
+                <p data-i18n="antalisDesc">Papīra, iepakojuma un vizuālās komunikācijas materiālu izplatītājs uzņēmumiem.</p>
               </div>
             </dialog>
           </li>
@@ -119,9 +126,9 @@
             </button>
             <dialog class="company-card" id="kreiss-info" aria-labelledby="kreiss-title">
               <div class="company-card-content">
-                <button class="card-close" type="button" aria-label="Aizvērt"><span aria-hidden="true">×</span></button>
+                <button class="card-close" type="button" aria-label="Aizvērt" data-i18n-aria-label="close"><span aria-hidden="true">×</span></button>
                 <strong id="kreiss-title">Kreiss</strong>
-                <p>Latvijas loģistikas uzņēmums, kas nodrošina kravu autopārvadājumus un noliktavu pakalpojumus Eiropā.</p>
+                <p data-i18n="kreissDesc">Latvijas loģistikas uzņēmums, kas nodrošina kravu autopārvadājumus un noliktavu pakalpojumus Eiropā.</p>
               </div>
             </dialog>
           </li>
@@ -132,9 +139,9 @@
             </button>
             <dialog class="company-card" id="severstal-distribution-info" aria-labelledby="severstal-distribution-title">
               <div class="company-card-content">
-                <button class="card-close" type="button" aria-label="Aizvērt"><span aria-hidden="true">×</span></button>
+                <button class="card-close" type="button" aria-label="Aizvērt" data-i18n-aria-label="close"><span aria-hidden="true">×</span></button>
                 <strong id="severstal-distribution-title">Severstal Distribution</strong>
-                <p>Tērauda apstrādes un izplatīšanas uzņēmums Rīgā. Kopš 2023. gada darbojas ar nosaukumu Marcegaglia Baltics.</p>
+                <p data-i18n="severstalDesc">Tērauda apstrādes un izplatīšanas uzņēmums Rīgā. Kopš 2023. gada darbojas ar nosaukumu Marcegaglia Baltics.</p>
               </div>
             </dialog>
           </li>
@@ -145,9 +152,9 @@
             </button>
             <dialog class="company-card" id="proks-info" aria-labelledby="proks-title">
               <div class="company-card-content">
-                <button class="card-close" type="button" aria-label="Aizvērt"><span aria-hidden="true">×</span></button>
+                <button class="card-close" type="button" aria-label="Aizvērt" data-i18n-aria-label="close"><span aria-hidden="true">×</span></button>
                 <strong id="proks-title">Proks</strong>
-                <p>Plaša patēriņa elektronikas un datoru komponentu vairumtirgotājs Rīgā.</p>
+                <p data-i18n="proksDesc">Plaša patēriņa elektronikas un datoru komponentu vairumtirgotājs Rīgā.</p>
               </div>
             </dialog>
           </li>

@@ -160,7 +160,6 @@ h1, h2, p, ul, address { margin: 0; }
 
 .contacts {
   display: flex;
-  flex-direction: column;
   gap: 9px;
   margin-top: 29px;
   font-style: normal;
@@ -171,7 +170,6 @@ h1, h2, p, ul, address { margin: 0; }
   align-items: center;
   justify-content: center;
   gap: 9px;
-  width: 100%;
   min-height: 46px;
   padding: 8px 15px;
   border: 1px solid transparent;
@@ -182,38 +180,29 @@ h1, h2, p, ul, address { margin: 0; }
   overflow-wrap: anywhere;
 }
 
-.contact-link.primary { background: var(--warm); color: #202027; }
-.contact-link.primary:hover { background: #f9d2a4; }
-.contact-link.secondary { border-color: #697381; background: #101824b3; }
-.contact-link.secondary:hover { border-color: var(--warm); color: var(--warm); }
+.contact-link.primary { flex: 1 1 auto; background: var(--warm); color: #202027; }
+.contact-link.secondary { flex: 0 0 auto; border-color: #697381; background: #101824b3; }
 
-.envelope {
-  position: relative;
-  flex: 0 0 16px;
-  height: 12px;
-  overflow: hidden;
-  border: 1.5px solid currentColor;
-  border-radius: 2px;
+@media (hover: hover) and (pointer: fine) {
+  .contact-link.primary:hover { background: #f9d2a4; }
+  .contact-link.secondary:hover { border-color: #0a66c2; color: #0a66c2; }
+  .contact-link.secondary:hover .linkedin-icon { fill: #0a66c2; }
+  .contact-link.primary:hover .gmail-blue { fill: #4285f4; }
+  .contact-link.primary:hover .gmail-green { fill: #34a853; }
+  .contact-link.primary:hover .gmail-yellow { fill: #fbbc04; }
+  .contact-link.primary:hover .gmail-red { fill: #ea4335; }
+  .contact-link.primary:hover .gmail-dark-red { fill: #c5221f; }
 }
 
-.envelope::after {
-  content: "";
-  position: absolute;
-  top: -8px;
-  left: 1px;
-  width: 10px;
-  height: 10px;
-  transform: rotate(45deg);
-  border: solid currentColor;
-  border-width: 0 1.5px 1.5px 0;
-}
-
+.gmail-icon,
 .linkedin-icon {
   flex: 0 0 16px;
   width: 16px;
   height: 16px;
-  fill: currentColor;
 }
+
+.gmail-icon path { fill: currentColor; }
+.linkedin-icon { fill: currentColor; }
 
 .experience {
   position: relative;
@@ -418,10 +407,13 @@ h1, h2, p, ul, address { margin: 0; }
 
 @media (max-width: 480px) {
   .experience ul { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 340px; }
+  .contacts { flex-direction: column; }
+  .contact-link { width: 100%; flex: 0 0 auto; }
 }
 
 @media (min-width: 761px) and (max-width: 860px) {
   .experience ul { width: min(100%, 480px); }
+  .contact-link { gap: 6px; padding-inline: 8px; font-size: .84rem; }
 }
 
 @media (forced-colors: active) {

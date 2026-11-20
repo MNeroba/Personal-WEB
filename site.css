@@ -349,8 +349,8 @@ h1, h2, p, ul, address { margin: 0; }
   .role { gap: 8px; margin-bottom: 15px; letter-spacing: .06em; }
   .role::before { flex-basis: 14px; }
   .description { margin-top: 17px; }
-  .contacts { margin-top: 21px; }
-  .contact-link { gap: 7px; padding-inline: 10px; font-size: .9rem; }
+  .contacts { flex-direction: column; margin-top: 21px; }
+  .contact-link { width: 100%; gap: 7px; padding-inline: 10px; font-size: .9rem; }
   .portrait { inset: 0 0 auto; width: 100%; height: clamp(293px, 73vw, 438px); }
   .portrait img { object-position: center 9%; }
   .portrait::after { background: linear-gradient(0deg, var(--hero) 0%, #0f1723c9 16%, transparent 55%); }

@@ -64,7 +64,16 @@ function setExpanded(company, expanded) {
 
   if (!company.card.open) {
     if (wideLayout.matches) {
+      const focused = document.activeElement;
       company.card.show();
+
+      if (document.activeElement !== focused) {
+        if (focused instanceof HTMLElement && focused !== document.body) {
+          focused.focus({ preventScroll: true });
+        } else if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+      }
     } else {
       company.card.showModal();
     }
